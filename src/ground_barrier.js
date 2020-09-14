@@ -18,3 +18,5 @@ class GroundBarrier extends Obstacle {
     this.sprite = options.sprite;
   }
 }
+
+module.exports = GroundBarrier;
