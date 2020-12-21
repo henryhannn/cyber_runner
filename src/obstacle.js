@@ -1,3 +1,5 @@
+import Sprite from './sprite';
+
 class Obstacle {
   constructor(params) {
     this.position = params.startPos;
@@ -18,3 +20,5 @@ class Obstacle {
     this.position[0] -= this.speed;
   }
 }
+
+export default Obstacle;
