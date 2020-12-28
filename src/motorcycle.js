@@ -15,10 +15,10 @@ class Motorcycle extends Sprite {
       moving: false,
     };
     this.motorcycleSprite = new Image();
-    this.motorcycleSprite.src = "dist/images/motorcycle.png";
+    this.motorcycleSprite.src = "dist/images/player-motorcycle.png";
   }
 
-  drawmotorcycleSprite(ctx) {
+  drawMotorcycleSprite(ctx) {
     this.drawSprite(
       ctx,
       this.motorcycleSprite,
@@ -35,23 +35,24 @@ class Motorcycle extends Sprite {
 
   movementListener() {
     window.addEventListener("keydown", (e) => {
-      if (e.key === 38 || e.key === 40) {
+      if (e.keyCode === "38" || e.keyCode === "40") {
         e.preventDefault();
       }
-      this.keys[e.key] = true;
+      this.keys[e.keyCode] = true;
     });
+
     window.addEventListener("keyup", (e) => {
-      if (e.key === 38 || e.key === 40) {
+      if (e.keyCode === "38" || e.keyCode === "40") {
         e.preventDefault();
       }
     });
   }
 
   moveMotorcycle() {
-    if (this.keys[38] && this.motorcycle.y > 0) {
+    if (this.keys["38"] && this.motorcycle.y > 0) {
       this.motorcycle.y -= this.motorcycle.speed;
     }
-    if (this.keys[40] && this.motorcycle.y < 500 - this.motorcycle.height / 55) {
+    if (this.keys["40"] && this.motorcycle.y < 500 - this.motorcycle.height / 55) {
       this.motorcycle.y += this.motorcycle.speed;
     }
   }

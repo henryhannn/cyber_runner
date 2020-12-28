@@ -13,25 +13,14 @@ class Obstacle extends Sprite {
       frameY: 0,
       speed: Math.random() * 1.5 + speedChange,
     };
-    this.obstacleImages = [];
+    this.obstacleImages = [
+      "dist/images/enemy-motorcycle-1.png",
+      "dist/images/enemy-motorcycle-2.png"
+    ];
     this.obstacleSprite = new Image();
     this.obstacleSprite.src = this.obstacleImages[
       Math.floor(Math.random() + this.obstacleImages.length)
     ];
-  }
-
-  draw(ctx) {
-    ctx.beginPath();
-    ctx.rect(this.position[0], this.position[1], 10, 50);
-    ctx.fillStyle = 'black';
-    ctx.fill();
-    ctx.lineWidth = 1;
-    ctx.strokeStyle = 'blue';
-    ctx.stroke();
-  }
-
-  getRandomY(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
   drawObstacleSprite(ctx) {
@@ -46,7 +35,11 @@ class Obstacle extends Sprite {
       this.obstacle.y,
       this.obstacle.width / 20,
       this.obstacle.height / 20
-    );
+    )
+  }
+
+  getSpawnPoint(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
   update(canvas) {
