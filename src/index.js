@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   canvas.width = 1000;
   canvas.height = 500;
 
-  const startGameButton = document.getElementById('.game-start-button'); 
+  const startGameButton = document.querySelector('.game-start-button'); 
 
   console.log(startGameButton);
 
@@ -30,12 +30,21 @@ document.addEventListener('DOMContentLoaded', function() {
   function startGame() {
     const game = new Game;
     currentGame = game; 
-    game.animate(ctx, canvas);
+    game.createGame(ctx, canvas);
     const pauseGameButton = document.querySelector('.pause-game-button');
     pauseGameButton.removeAttribute('id', 'clear-game-pause');
     pauseGame(game); 
     unpauseGame(game);
   };
+
+  function closeStartGameButton() {
+    startGameButton.setAttribute("id", "close-start-button");
+    startGameButton.removeEventListener("click", function(e) {
+      e.preventDefault(); 
+      closeStartGameButton();
+      startGame(); 
+    })
+  }
 
   const restartButton = document.getElementById('restart-button');
   
@@ -87,4 +96,6 @@ document.addEventListener('DOMContentLoaded', function() {
       playGameButton.removeEventListener('click', _func2.bind(event, game));
     }
   };
+
+
 })

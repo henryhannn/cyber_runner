@@ -27,7 +27,7 @@ class Game {
         const randomObstacleNum = getRandomObstacle(1, numOfObstacles) 
         for (let i = 0; i < randomObstacleNum; i++) {
           const id = Math.random()
-          this.ghosts[id] = new Obstacle(id, speedChange); 
+          this.obstacles[id] = new Obstacle(id, speedChange); 
         }
       }
     }, 3000)
@@ -66,7 +66,8 @@ class Game {
     for (let i = 0; i < obstacles.length; i++) {
       let obstacle = obstacles[i].obstacle;
       if (!this.paused) {
-        if ((obstacle.x === this.motorcycle.x) && (obstacle.y === this.motorcycle.y)) {
+        if ((obstacle.x < this.motorcycle.x + 700) && (obstacle.x > this.motorcycle.x - 700)
+          && (obstacle.y < this.motorcycle.y + 600) && (obstacle.y > this.motorcycle.y - 600)) {
           this.gameOver();
         }
       }
@@ -83,7 +84,7 @@ class Game {
         ctx.fillStyle = 'black';
         ctx.fillText(`Score: ${this.score}`, 350, 40);
         this.motorcycle.drawMotorcycleSprite(ctx);
-        this.motorcycle.moveMotorcycle;
+        this.motorcycle.moveMotorcycle();
         this.moveObstacle(ctx, canvas);
         this.checkCollision();
       }

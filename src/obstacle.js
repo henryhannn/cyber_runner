@@ -5,10 +5,10 @@ class Obstacle extends Sprite {
     super();
     this.obstacle = {
       id: id,
-      x: 900,
+      x: 1000,
       y: this.getRandomY(50, 450),
-      width: 1408,
-      height: 1161,
+      width: 1400,
+      height: 1200,
       frameX: 0,
       frameY: 0,
       speed: Math.random() * 1.5 + speedChange,
@@ -19,7 +19,7 @@ class Obstacle extends Sprite {
     ];
     this.obstacleSprite = new Image();
     this.obstacleSprite.src = this.obstacleImages[
-      Math.floor(Math.random() + this.obstacleImages.length)
+      Math.floor(Math.random() * this.obstacleImages.length)
     ];
   }
 
@@ -33,12 +33,16 @@ class Obstacle extends Sprite {
       this.obstacle.height,
       this.obstacle.x,
       this.obstacle.y,
-      this.obstacle.width / 20,
+      this.obstacle.width / 18,
       this.obstacle.height / 20
     )
   }
 
   getSpawnPoint(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
+  getRandomY(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
