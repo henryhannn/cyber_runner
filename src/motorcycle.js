@@ -35,14 +35,14 @@ class Motorcycle extends Sprite {
 
   movementListener() {
     window.addEventListener("keydown", (e) => {
-      if (e.keyCode === 38 || e.keyCode === 40) {
+      if (e.keyCode === 38 || e.keyCode === 40 || e.keyCode === 37 || e.keyCode === 39) {
         e.preventDefault();
       }
       this.keys[e.keyCode] = true;
     });
 
     window.addEventListener("keyup", (e) => {
-      if (e.keyCode === 38 || e.keyCode === 40) {
+      if (e.keyCode === 38 || e.keyCode === 40 || e.keyCode === 37 || e.keyCode === 39) {
         e.preventDefault();
       }
       delete this.keys[e.keyCode];
