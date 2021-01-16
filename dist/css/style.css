@@ -1,11 +1,14 @@
 body {
-  background-color: #92d2f0;
+  background: url("../images/main-splash.png");
 }
 
 .game-area {
-  position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
 }
 
 .game {
@@ -15,6 +18,7 @@ body {
   border: 2px solid black;
   background-position: center;
   background-size: cover;
+  background-color: rgb(29, 59, 87);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,7 +30,7 @@ body {
   border: 2px solid black; 
   background-position: center;
   background-size: cover;
-  background-color: white; 
+  background-color: rgb(57, 160, 207); 
 }
 
 .game-start-button {
@@ -35,7 +39,8 @@ body {
   border:5px solid black; 
   background-color: white; 
   padding: 10px 15px; 
-  font-size: 30px; 
+  font-size: 30px;
+  font-family: serif;
 }
 
 .game-start-button:hover {
@@ -46,6 +51,16 @@ body {
 
 #close-start-button {
   display: none; 
+}
+
+.game-button-styles {
+  position: absolute;
+  top: 60px; 
+  right: 120px;
+  font-family: serif;
+  font-size: 20px;
+  border: 3px solid black;
+  box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.5);
 }
 
 #clear-game-pause {
@@ -66,7 +81,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("../images/red_pattern.png");
   background-position: center;
   background-size: cover;
 }
@@ -84,11 +98,6 @@ body {
 
 .game-over-form > h1 {
   font-size: 50px; 
-}
-
-.game-over-form > img {
-  height: 100px;
-  width: auto;  
 }
 
 .game-over-form > button {
