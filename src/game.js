@@ -66,8 +66,8 @@ class Game {
     for (let i = 0; i < obstacles.length; i++) {
       let obstacle = obstacles[i].position;
       if (!this.paused) {
-        if ((obstacle.x < this.motorcycle.position.x + 700) && (obstacle.x > this.motorcycle.position.x - 700)
-          && (obstacle.y < this.motorcycle.position.y + 600) && (obstacle.y > this.motorcycle.position.y - 600)) {
+        if ((obstacle.x < this.motorcycle.position.x + 20) && (obstacle.x > this.motorcycle.position.x - 20)
+          && (obstacle.y < this.motorcycle.position.y + 20) && (obstacle.y > this.motorcycle.position.y - 20)) {
           this.gameOver();
         }
       }
@@ -88,7 +88,11 @@ class Game {
         this.moveObstacle(ctx, canvas);
         this.checkCollision();
       }
-    }, 20)
+    }, 20);
+    setInterval(() => {
+      if (!this.paused) {
+      }
+    }, 5);
   }
 }
 

@@ -33,8 +33,8 @@ class Obstacle extends Sprite {
       this.position.height,
       this.position.x,
       this.position.y,
-      this.position.width / 18,
-      this.position.height / 20
+      this.position.width / 15,
+      this.position.height / 17
     )
   }
 
