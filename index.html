@@ -6,30 +6,38 @@
     <title>Document</title>
     <link rel="stylesheet" href="dist/css/reset.css">
     <link rel="stylesheet" href="dist/css/style.css">
+    <script src="https://kit.fontawesome.com/7275b6aa0a.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="main-area">
       <div class="game-area">
+        <div class="game-title">
+          <h1>cyber runner</h1>
+        </div>
         <div class="game">
           <canvas id="game-canvas"></canvas>
           <script src="dist/main.js"></script>
           <button id="clear-game-pause" class="pause-game-button game-button-styles">Pause</button>
-          <button id="clear-game-play" class="play-game-button game-button-styles">Play</button>
-          <button class="game-start-button">Start!</button>
+          <button id="clear-game-play" class="play-game-button game-button-styles">Unpause</button>
+          <button class="game-start-button">Start</button>
         </div>
         <div class="game-over-popup1 game-over-popup" id="clear-game-over-popup">
           <div class="game-over-form">
             <h1>Game Over</h1>
-            <button id="restart-button">Play Again!</button>
+            <button id="restart-button">Play Again</button>
           </div>
         </div>
-      </div>
-      <div class="game-instruction">
-
-      </div>
-      <div class="winner-popup">
-        <div class="winner-form">
-
+        <div class="text">
+          <div class="text-instruction">
+            <p>Use your arrow keys to move your motorcycle.</p>
+            <p>If your motorcycle comes into contact with any obstacles, you lose.</p>
+            <p>Try your best not to crash.</p>
+          </div>
+          <div class="text-social">
+            <h2>Created by Henry Han</h2>
+            <a href="https://github.com/henryhannn"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/henryhannn/"><i class="fab fa-linkedin"></i></a>
+          </div>
         </div>
       </div>
     </div>

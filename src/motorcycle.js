@@ -11,8 +11,8 @@ class Motorcycle extends Sprite {
       height: 1200,
       frameX: 0,
       frameY: 0,
-      speed: 6,
-      // moving: false,
+      ySpeed: 4,
+      xSpeed: 5,
     };
     this.motorcycleSprite = new Image();
     this.motorcycleSprite.src = "dist/images/player-motorcycle.png";
@@ -50,11 +50,17 @@ class Motorcycle extends Sprite {
   }
 
   moveMotorcycle() {
-    if (this.keys[38] && this.position.y > 0) {
-      this.position.y -= this.position.speed;
+    if (this.keys[38] && this.position.y > 50) {
+      this.position.y -= this.position.ySpeed;
     }
-    if (this.keys[40] && this.position.y < 500 - this.position.height / 20) {
-      this.position.y += this.position.speed;
+    if (this.keys[40] && this.position.y < 450) {
+      this.position.y += this.position.ySpeed;
+    }
+    if (this.keys[37] && this.position.x > 5) {
+      this.position.x -= this.position.xSpeed;
+    }
+    if (this.keys[39] && this.position.x < 900) {
+      this.position.x += this.position.xSpeed;
     }
   }
 }

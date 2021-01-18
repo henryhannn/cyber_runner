@@ -66,8 +66,8 @@ class Game {
     for (let i = 0; i < obstacles.length; i++) {
       let obstacle = obstacles[i].position;
       if (!this.paused) {
-        if ((obstacle.x < this.motorcycle.position.x + 20) && (obstacle.x > this.motorcycle.position.x - 20)
-          && (obstacle.y < this.motorcycle.position.y + 20) && (obstacle.y > this.motorcycle.position.y - 20)) {
+        if ((obstacle.x < this.motorcycle.position.x + 27) && (obstacle.x > this.motorcycle.position.x - 29)
+          && (obstacle.y < this.motorcycle.position.y + 9) && (obstacle.y > this.motorcycle.position.y - 12)) {
           this.gameOver();
         }
       }
@@ -80,17 +80,17 @@ class Game {
     setInterval(() => {
       if (!this.paused) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.font = 'bold 40px serif';
+        ctx.font = 'bold 40px monospace';
         ctx.fillStyle = 'black';
-        ctx.fillText(`Score: ${this.score}`, 350, 40);
+        ctx.fillText(`Score: ${Math.abs(this.score)}`, 390, 40);
         this.motorcycle.drawMotorcycleSprite(ctx);
         this.motorcycle.moveMotorcycle();
         this.moveObstacle(ctx, canvas);
-        this.checkCollision();
       }
     }, 20);
     setInterval(() => {
       if (!this.paused) {
+        this.checkCollision();
       }
     }, 5);
   }
