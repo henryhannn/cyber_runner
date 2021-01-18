@@ -3,7 +3,7 @@ import Sprite from './sprite';
 class Obstacle extends Sprite {
   constructor(id, speedChange) {
     super();
-    this.obstacle = {
+    this.position = {
       id: id,
       x: 1000,
       y: this.getRandomY(50, 450),
@@ -27,14 +27,14 @@ class Obstacle extends Sprite {
     this.drawSprite(
       ctx,
       this.obstacleSprite,
-      this.obstacle.frameX,
-      this.obstacle.frameY,
-      this.obstacle.width,
-      this.obstacle.height,
-      this.obstacle.x,
-      this.obstacle.y,
-      this.obstacle.width / 18,
-      this.obstacle.height / 20
+      this.position.frameX,
+      this.position.frameY,
+      this.position.width,
+      this.position.height,
+      this.position.x,
+      this.position.y,
+      this.position.width / 18,
+      this.position.height / 20
     )
   }
 
@@ -47,10 +47,10 @@ class Obstacle extends Sprite {
   }
 
   update(canvas) {
-    if (this.obstacle.x > 0 - this.obstacle.width / 20) {
-      this.obstacle.x -= this.obstacle.speed;
+    if (this.position.x > 0 - this.position.width / 20) {
+      this.position.x -= this.position.speed;
     } else {
-      this.obstacle.x = canvas.width + this.obstacle.width / 20;
+      this.position.x = canvas.width + this.position.width / 20;
     }
   }
 }

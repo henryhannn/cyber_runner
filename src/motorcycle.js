@@ -4,7 +4,7 @@ class Motorcycle extends Sprite {
   constructor() {
     super();
     this.keys = [];
-    this.motorcycle = {
+    this.position = {
       x: 80,
       y: 200,
       width: 1400,
@@ -12,7 +12,7 @@ class Motorcycle extends Sprite {
       frameX: 0,
       frameY: 0,
       speed: 6,
-      moving: false,
+      // moving: false,
     };
     this.motorcycleSprite = new Image();
     this.motorcycleSprite.src = "dist/images/player-motorcycle.png";
@@ -22,14 +22,14 @@ class Motorcycle extends Sprite {
     this.drawSprite(
       ctx,
       this.motorcycleSprite,
-      this.motorcycle.frameX,
-      this.motorcycle.frameY,
-      this.motorcycle.width,
-      this.motorcycle.height,
-      this.motorcycle.x,
-      this.motorcycle.y,
-      this.motorcycle.width / 18,
-      this.motorcycle.height / 20
+      this.position.frameX,
+      this.position.frameY,
+      this.position.width,
+      this.position.height,
+      this.position.x,
+      this.position.y,
+      this.position.width / 18,
+      this.position.height / 20
     );
   }
 
@@ -50,11 +50,11 @@ class Motorcycle extends Sprite {
   }
 
   moveMotorcycle() {
-    if (this.keys[38] && this.motorcycle.y > 0) {
-      this.motorcycle.y -= this.motorcycle.speed;
+    if (this.keys[38] && this.position.y > 0) {
+      this.position.y -= this.position.speed;
     }
-    if (this.keys[40] && this.motorcycle.y < 500 - this.motorcycle.height / 20) {
-      this.motorcycle.y += this.motorcycle.speed;
+    if (this.keys[40] && this.position.y < 500 - this.position.height / 20) {
+      this.position.y += this.position.speed;
     }
   }
 }

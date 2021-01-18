@@ -64,10 +64,10 @@ class Game {
   checkCollision() {
     const obstacles = Object.values(this.obstacles);
     for (let i = 0; i < obstacles.length; i++) {
-      let obstacle = obstacles[i].obstacle;
+      let obstacle = obstacles[i].position;
       if (!this.paused) {
-        if ((obstacle.x < this.motorcycle.x + 700) && (obstacle.x > this.motorcycle.x - 700)
-          && (obstacle.y < this.motorcycle.y + 600) && (obstacle.y > this.motorcycle.y - 600)) {
+        if ((obstacle.x < this.motorcycle.position.x + 700) && (obstacle.x > this.motorcycle.position.x - 700)
+          && (obstacle.y < this.motorcycle.position.y + 600) && (obstacle.y > this.motorcycle.position.y - 600)) {
           this.gameOver();
         }
       }
