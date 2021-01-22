@@ -39,10 +39,8 @@ body {
 #game-canvas {
   width: 800px;
   height: 500px; 
-  border: 2px solid black; 
-  background-position: center;
-  background-size: cover;
-  background-color: rgb(57, 160, 207); 
+  border: 2px solid black;
+  background: url("../images/highway.png");
 }
 
 .game-start-button {
