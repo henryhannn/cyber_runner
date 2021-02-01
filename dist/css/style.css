@@ -159,11 +159,6 @@ body {
   display: none; 
 }
 
-/* .music-area{
-  display: ;
-  justify-content: center;
-} */
-
 .music {
   display: absolute;
   justify-content: flex-end;
