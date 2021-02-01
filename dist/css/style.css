@@ -154,3 +154,27 @@ body {
 .text-social {
   margin-top: 5%;
 }
+
+.clear-music {
+  display: none; 
+}
+
+.music {
+  display: absolute;
+  justify-content: flex-end;
+  left: 475px;
+  top: 180px;
+  font-size: 30px; 
+  width: 800px; 
+  position: relative;  
+  z-index: 10;
+  color: white;
+}
+
+#play:hover {
+  color: #0cdbff;
+}
+
+#pause:hover {
+  color: #0cdbff;
+}
