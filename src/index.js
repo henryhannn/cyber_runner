@@ -98,8 +98,8 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   const music = document.getElementById("music");
-  const play = document.getElementById("play-music");
-  const pause = document.getElementById("pause-music");
+  const play = document.getElementById("play");
+  const pause = document.getElementById("pause");
 
   play.addEventListener("click", function (e) {
     e.preventDefault();
