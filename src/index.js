@@ -97,5 +97,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   };
 
+  const music = document.getElementById("music");
+  const play = document.getElementById("play-music");
+  const pause = document.getElementById("pause-music");
 
+  play.addEventListener("click", function (e) {
+    e.preventDefault();
+    playAudio();
+    play.setAttribute("class", "clear-music-button");
+    pause.removeAttribute("class", "clear-music-button"); 
+  });
+
+  pause.addEventListener("click", function (e) {
+    e.preventDefault();
+    pauseAudio();
+    pause.setAttribute("class", "clear-music-button");
+    play.removeAttribute("class", "clear-music-button");
+  });
+
+  function playAudio() {
+    music.play();
+  }
+
+  function pauseAudio() {
+    music.pause();
+  }
 })
